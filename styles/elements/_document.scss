@@ -1,0 +1,25 @@
+// ==========================================================================
+// Elements / Document
+// ==========================================================================
+
+html {
+  @include text-adjustments;
+  font-size: calc(10 * (100vw / var(--size)));
+}
+
+body {
+  @apply text-20 overflow-hidden;
+}
+
+::selection {
+  @apply bg-primary-500 text-light;
+  text-shadow: none;
+}
+
+.site-grid {
+  @apply mx-auto grid grid-cols-website gap-x-12 px-32 w-full s:gap-x-24 s:px-72;
+}
+
+.site-max {
+  @apply mx-auto w-full px-32 s:px-72;
+}

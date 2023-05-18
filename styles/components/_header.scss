@@ -1,0 +1,49 @@
+// ==========================================================================
+// Components / Header
+// ==========================================================================
+
+html:not(.has-menu-opened) .c-header {
+  @apply bg-light text-primary-500;
+
+  &--primary {
+    @apply bg-primary-500 text-light;
+  }
+}
+
+.c-header {
+  @apply fixed top-0 left-0 py-32 z-[800] w-full text-light s:py-56 s:text-24;
+
+  &_logo {
+    @apply whitespace-nowrap w-min col-start-1 col-end-4 hover:underline;
+  }
+
+  &_menu {
+    @apply col-start-6 col-end-9 hidden s:block;
+  }
+
+  &_menu-toggler {
+    @apply block col-start-5 col-end-7 justify-self-end s:hidden;
+  }
+
+  &-menu_list {
+    @apply flex gap-4 whitespace-nowrap;
+  }
+
+  &-menu_item {
+    @apply inline-block;
+
+    &:not(:last-child):after {
+      @apply content-[','];
+    }
+  }
+
+  &-menu_link {
+    &[aria-current='page'] {
+      @apply font-bold underline;
+    }
+
+    &:not([aria-current='page']) {
+      @apply hover:underline;
+    }
+  }
+}

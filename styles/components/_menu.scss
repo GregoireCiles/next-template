@@ -1,0 +1,32 @@
+// ==========================================================================
+// Components / Menu
+// ==========================================================================
+
+html:not(.has-menu-opened) .c-menu {
+  @apply hidden;
+}
+
+.c-menu {
+  @apply fixed top-0 left-0 w-full h-full z-[750] text-light bg-primary-500 overflow-hidden uppercase;
+
+  &_inner {
+    @apply flex flex-col justify-end p-32 h-screen;
+    padding-top: var(--header-height);
+    min-height: calc(var(--vh) * 100);
+  }
+
+  &_nav {
+    font-size: calc(min(12vw, 4.66667rem));
+    line-height: 1.4;
+  }
+
+  &_nav_link {
+    &[aria-current='page'] {
+      @apply font-bold underline;
+    }
+
+    &:not([aria-current='page']) {
+      @apply hover:underline;
+    }
+  }
+}

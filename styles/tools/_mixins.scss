@@ -1,0 +1,14 @@
+// ==========================================================================
+// Tools / Mixins
+// ==========================================================================
+
+@mixin text-adjustments {
+  text-rendering: optimizeLegibility;
+  @include font-smoothing;
+  -webkit-text-size-adjust: 100%;
+}
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
